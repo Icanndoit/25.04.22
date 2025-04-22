@@ -1,0 +1,16 @@
+n = int(input())
+lst = list(map(int, input().split()))
+
+out1 = out2 = 0
+for i in lst:
+    out1 = out1 +  ((i // 30 + 1) * 10)
+    out2 = out2 + ((i // 60 + 1) * 15)
+
+if out1 > out2:
+    print("M {}".format(out2))
+
+elif out1 < out2:
+    print("Y {}".format(out1))
+
+else:
+    print("Y M {}".format(out1))
