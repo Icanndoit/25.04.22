@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+	int top = -1, n;
+	int* stack = new int[1000000];
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+
+	cin >> n;
+	for (int i = 0; i < n; i++) 
+	{
+		int command;  cin >> command;
+		if (command == 1) {
+			int data;  cin >> data;
+			stack[++top] = data;
+		}
+		else if (command == 3)
+			cout << top + 1 << "\n";
+		else if (command == 4) {
+			if (top == -1)
+				cout << 1 << "\n";
+			else
+				cout << 0 << "\n";
+		}
+		else if (command == 2 || command == 5) {
+			if (top == -1)
+				cout << -1 << "\n";
+			else {
+				cout << stack[top] << "\n";
+				if (command == 2)
+					top--;
+			}
+		}
+	}delete[]stack;
+
+	return 0;
+}
